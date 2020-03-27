@@ -1,0 +1,131 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Wang Yu 的博客"><meta name="description" content="Miao的博客"><link rel="alternative" href="/atom.xml" title="Miao Love" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>Github + hexo 搭建博客 - Miao Love</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Miao Love</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2019-11-02T00:38:17.000Z">2019 - 11 - 01 20:38:17</time><h1 class="post__title"><a href="/2019/11/02/github%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Github + hexo 搭建博客</a></h1><div class="post__main echo"><h1 id="github-搭建博客"><a href="#github-搭建博客" class="headerlink" title="github_搭建博客"></a>github_搭建博客</h1><ul>
+<li>搭建博客是程序员必备的装逼利器之一，使用github搭建博客，0成本，还不需要担心被攻击。不要独立域名的话，那就真正的0成本啦！</li>
+<li>网上找了很多别人搭建的资料，我也整理借鉴自己写一写。</li>
+</ul>
+<h2 id="Windows-10-部署环境"><a href="#Windows-10-部署环境" class="headerlink" title="Windows 10 部署环境"></a>Windows 10 部署环境</h2><ul>
+<li><h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4></li>
+<li><p>1.安装Git</p>
+<ul>
+<li><p>Git是上传到Github的工具，在Github上有项目的也会用到~</p>
+</li>
+<li><p>下载 <a href="https://git-scm.com/download/win" target="_blank" rel="noopener">https://git-scm.com/download/win</a>   （根据自己的版本下载）</p>
+</li>
+<li><p>安装选线全部默认，只不过最后一步添加路径时选择<code>Use Git from the Windows Command Prompt</code>，这样我们就可以直接在命令提示符里打开git了。</p>
+<p><img src="/github_img/01.jpg" alt="01"></p>
+</li>
+<li><p>我们可以使用Git Bash Here 进行操作</p>
+<p><img src="/github_img/02.jpg" alt="01"></p>
+<p><img src="/github_img/03.jpg" alt="01"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h4></li>
+<li><p>1.安装Nodejs</p>
+<ul>
+<li><p>Node.js 是一个基于 Chrome V8 引擎的 <a href="https://baike.baidu.com/item/JavaScript/321142" target="_blank" rel="noopener">JavaScript</a> 运行环境。</p>
+</li>
+<li><p>下载 <a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a> （根据自己的版本下载）</p>
+</li>
+<li><p>安装的时候务必选择Add to PATH选项 一路next。</p>
+</li>
+<li><p>安装好后，按 Win + R 打开命令提示符，输入node -v  和 npm -v 显示一下效果。</p>
+<p><img src="/github_img/04.jpg" alt="01"></p>
+</li>
+<li><p>如果没有梯子的话，可以去找找国内镜像进行加速。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h4></li>
+<li><p>打开github网址   <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>    （没有的快快注册）</p>
+<ul>
+<li><p>开始创建一个项目</p>
+<p><img src="/github_img/05.jpg" alt="01"></p>
+</li>
+<li><p>输入项目名称的时候一定是  name.github.io    (你的名字后面 + .github.io)  README初始化也要勾上。</p>
+<p><img src="/github_img/06.jpg" alt="01"></p>
+</li>
+<li><p>项目建成，点击settings，向下拉到最后有个Github Pages，点击Choose a theme选择主题，然后等会，再回来Git Pages , 会变成下面这样：</p>
+<p><img src="/github_img/07.jpg" alt="01"></p>
+</li>
+<li><p>点击中间的网址链接，可以看到你的页面。</p>
+<p><img src="/github_img/08.jpg" alt="01"></p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4></li>
+<li><p>在合适的地方建立一个文件，用来存放自己的博客文件，如下</p>
+<p><img src="/github_img/09.jpg" alt="01"></p>
+</li>
+<li><p>在该目录下点击右键使用Git Bash Here ,打开git控制窗口，以后就在此操作。</p>
+</li>
+<li><p>输入 npm i hexo-cli -g  安装hexo。 会有几个报错。不用理他。</p>
+</li>
+<li><p>安装完成后输入  hexo -v  验证是否安装成功。</p>
+</li>
+<li><p>然后初始化我们的网站，输入 hexo init  初始化文件夹。</p>
+</li>
+<li><p>这样本地的网站配置好了，输入 hexo g 生成静态网页，然后输入hexo s 打开本地服务器，浏览器输入locallhost:4000/,就可以看到我们的博客啦，如下：</p>
+<p><img src="/github_img/10.jpg" alt="01"></p>
+</li>
+<li><p>ctrl + c 关闭本地服务器</p>
+</li>
+</ul>
+<ul>
+<li><h4 id="链接Github与本地"><a href="#链接Github与本地" class="headerlink" title="链接Github与本地"></a>链接Github与本地</h4></li>
+<li><p>首先右键打开git bash, 然后输入命令：(注册github的信息)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --<span class="keyword">global</span> user.name <span class="string">"name"</span></span><br><span class="line">git config --<span class="keyword">global</span> user.email <span class="string">"e-mail@qq.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后生成SSH key:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">"e-mail@qq.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开github,在头像下面点击settings,再点击SSH and GPG keys, 新建一个SSH，名字随便，然后在git bash中输入</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+<p>将内容复制到框当中，点击确定保存。 像这样子：</p>
+<p><img src="/github_img/11.jpg" alt="01"></p>
+</li>
+<li><p>打开博客根目录下的_config.yml文件，配置文件修改自己博客的各种信息。</p>
+</li>
+<li><p>修改最后一行的配置：</p>
+<p><img src="/github_img/12.jpg" alt="01"></p>
+</li>
+<li><p>接下来就可以写文章了，展示一下自己博客吧！</p>
+</li>
+</ul>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/Github-hexo-%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">Github + hexo 搭建博客</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.png" title="微信"><img src="/img/alipay.png" title="支付宝"></div></section><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+<script>new Valine({
+  av: AV,
+  el: '#v-container',
+  app_id: '4CUSqeRiP64ebYao411RLCDW-gzGzoHsz',
+  app_key: 'm2yVNfoDWa24ny1Ck4WHNhLN',
+  avatar: 'retro',
+  avatarForce: false,
+  notify: false,
+  verify: false,
+  lang: 'zh-cn',
+  placeholder: '君子之交淡若水，小人之交甘如醴',
+  pageSize: 20,
+  visitor: true,
+  highlight: true,
+  emoticon_url: '/img/alu',
+  emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2020 Wang Yu 的博客</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
