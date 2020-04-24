@@ -1,0 +1,62 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="author" content="Wang Yu 的博客"><meta name="description" content="Miao的博客"><link rel="alternative" href="/atom.xml" title="Miao Love" type="application/atom+xml"><link rel="icon" href="/favicon.ico"><title>Mysql安装配置及使用（windows10） - Miao Love</title>
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="/js/fancybox/jquery.fancybox.min.css">
+<!--[if lt IE 9]><script>(function(a,b){a="abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video".split(" ");for(b=a.length-1;b>=0;b--)document.createElement(a[b])})()</script><![endif]-->
+<script src="/js/jquery-3.1.1.min.js"></script>
+
+<script src="/js/fancybox/jquery.fancybox.min.js"></script>
+<meta name="generator" content="Hexo 4.2.0"></head><body style="opacity:0"><header class="head"><h1 class="head-title u-fl"><a href="/">Miao Love</a></h1><nav class="head-nav u-fr"><ul class="head-nav__list"><li class="head-nav__item"><a class="head-nav__link" href="/tags">标签</a></li><li class="head-nav__item"><a class="head-nav__link" href="/archives">目录</a></li></ul></nav></header><main class="main"><article class="post"><header class="post__head"><time class="post__time" datetime="2018-11-21T01:38:17.000Z">2018 - 11 - 20 20:38:17</time><h1 class="post__title"><a href="/2018/11/21/Mysql%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE%E5%8F%8A%E4%BD%BF%E7%94%A8%EF%BC%88windows10%EF%BC%89/">Mysql安装配置及使用（windows10）</a></h1><div class="post__main echo"><h2 id="Mysql安装配置及使用（windows10）"><a href="#Mysql安装配置及使用（windows10）" class="headerlink" title="Mysql安装配置及使用（windows10）"></a>Mysql安装配置及使用（windows10）</h2><ul>
+<li><h5 id="mysql官网下载"><a href="#mysql官网下载" class="headerlink" title="mysql官网下载"></a>mysql官网下载</h5><p><a href="https://www.mysql.com/cn/downloads/" target="_blank" rel="noopener">https://www.mysql.com/cn/downloads/</a></p>
+</li>
+<li><h5 id="下载解压后是这样的"><a href="#下载解压后是这样的" class="headerlink" title="下载解压后是这样的"></a>下载解压后是这样的</h5><p><img src="/mysql_img/01.jpg" alt="01"></p>
+</li>
+<li><h5 id="开始初始化配置-my-ini-文件"><a href="#开始初始化配置-my-ini-文件" class="headerlink" title="开始初始化配置 my.ini 文件"></a>开始初始化配置 my.ini 文件</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line"># 设置3306端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;C:\Program Files\MySQL    (一定要修改)</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir&#x3D;C:\Program Files\MySQL\Data  (一定要修改)</span><br><span class="line"># 允许最大连接数</span><br><span class="line">max_connections&#x3D;200</span><br><span class="line"># 允许连接失败的次数。</span><br><span class="line">max_connect_errors&#x3D;10</span><br><span class="line"># 服务端使用的字符集默认为utf8mb4</span><br><span class="line">character-set-server&#x3D;utf8mb4</span><br><span class="line"># 创建新表时将使用的默认存储引擎</span><br><span class="line">default-storage-engine&#x3D;INNODB</span><br><span class="line"># 默认使用“mysql_native_password”插件认证</span><br><span class="line">#mysql_native_password</span><br><span class="line">default_authentication_plugin&#x3D;mysql_native_password</span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set&#x3D;utf8mb4</span><br><span class="line">[client]</span><br><span class="line"># 设置mysql客户端连接服务端时默认使用的端口</span><br><span class="line">port&#x3D;3306</span><br><span class="line">default-character-set&#x3D;utf8mb4</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="可能会有人报错可以将安装目录和存放目录设置成这样-多加一条杠"><a href="#可能会有人报错可以将安装目录和存放目录设置成这样-多加一条杠" class="headerlink" title="可能会有人报错可以将安装目录和存放目录设置成这样   (多加一条杠)"></a>可能会有人报错可以将安装目录和存放目录设置成这样   (多加一条杠)</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir&#x3D;C:\\Program Files\\MySQL    (一定要修改)</span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir&#x3D;C:\\Program Files\\MySQL\\Data  (一定要修改)</span><br></pre></td></tr></table></figure>
+</li>
+<li><h5 id="然后用管理员权限打开cmd"><a href="#然后用管理员权限打开cmd" class="headerlink" title="然后用管理员权限打开cmd"></a>然后用管理员权限打开cmd</h5><p>进入到MySQL的bin目录当中</p>
+<p><img src="/mysql_img/02.jpg" alt="01"></p>
+<h5 id="并且执行命令"><a href="#并且执行命令" class="headerlink" title="并且执行命令"></a>并且执行命令</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize --console</span><br></pre></td></tr></table></figure>
+
+<p><img src="/mysql_img/03.jpg" alt="01"></p>
+<h4 id="root-localhost：原始密码-（一定要保存！）"><a href="#root-localhost：原始密码-（一定要保存！）" class="headerlink" title="root@localhost：原始密码 （一定要保存！）"></a>root@localhost：原始密码 （一定要保存！）</h4><h5 id="接下来下载mysql"><a href="#接下来下载mysql" class="headerlink" title="接下来下载mysql"></a>接下来下载mysql</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld --install</span><br></pre></td></tr></table></figure>
+
+<p><img src="/mysql_img/04.jpg" alt="01"></p>
+<h4 id="这样子就成功啦！"><a href="#这样子就成功啦！" class="headerlink" title="这样子就成功啦！"></a>这样子就成功啦！</h4><h5 id="接下来启动MySQL服务"><a href="#接下来启动MySQL服务" class="headerlink" title="接下来启动MySQL服务"></a>接下来启动MySQL服务</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net start mysql</span><br></pre></td></tr></table></figure>
+
+<p><img src="/mysql_img/05.jpg" alt="01"></p>
+<h4 id="启动成功啦！"><a href="#启动成功啦！" class="headerlink" title="启动成功啦！"></a>启动成功啦！</h4></li>
+</ul>
+<h5 id="接下来就是登录mysql修改密码啦"><a href="#接下来就是登录mysql修改密码啦" class="headerlink" title="接下来就是登录mysql修改密码啦"></a>接下来就是登录mysql修改密码啦</h5><h5 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p密码</span><br></pre></td></tr></table></figure>
+
+<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;新密码&#39;;</span><br></pre></td></tr></table></figure>
+
+<h5 id="退出"><a href="#退出" class="headerlink" title="退出"></a>退出</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exit;（退出mysql）</span><br></pre></td></tr></table></figure>
+
+
+
+<p>全部完成啦！开始使用mysql吧！</p>
+</div></header><footer class="post__foot u-cf"><ul class="post__tag u-fl"><li class="post__tag__item"><a class="post__tag__link" href="/tags/Mysql/">Mysql</a></li></ul></footer></article><section class="reward"><a class="btn-reward" href="#">打赏</a><div class="reward-wrapper clearfix"><img src="/img/wechat.png" title="微信"><img src="/img/alipay.png" title="支付宝"></div></section><div class="comments" id="v-container"><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/js/Valine.min.js"></script>
+<script>new Valine({
+  av: AV,
+  el: '#v-container',
+  app_id: '4CUSqeRiP64ebYao411RLCDW-gzGzoHsz',
+  app_key: 'm2yVNfoDWa24ny1Ck4WHNhLN',
+  avatar: 'retro',
+  avatarForce: false,
+  notify: false,
+  verify: false,
+  lang: 'zh-cn',
+  placeholder: '君子之交淡若水，小人之交甘如醴',
+  pageSize: 20,
+  visitor: true,
+  highlight: true,
+  emoticon_url: '/img/alu',
+  emoticon_list: ["吐.png","喷血.png","狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","中指.png","尴尬.png","瞅你.png","想一想.png","中枪.png","得意.png","肿包.png","扇耳光.png","亲亲.png","惊喜.png","脸红.png","无所谓.png","便便.png","愤怒.png","蜡烛.png","献黄瓜.png","内伤.png","投降.png","观察.png","看不见.png","击掌.png","抠鼻.png","邪恶.png","看热闹.png","口水.png","抽烟.png","锁眉.png","装大款.png","吐舌.png","无奈.png","长草.png","赞一个.png","呲牙.png","无语.png","阴暗.png","不出所料.png","咽气.png","期待.png","高兴.png","吐血倒地.png","哭泣.png","欢呼.png","黑线.png","喜极而泣.png","喷水.png","深思.png","鼓掌.png","暗地观察.png"],
+});</script></div></main><footer class="foot"><div class="foot-copy">&copy; 2016 - 2020 Wang Yu 的博客</div></footer>
+<script src="/js/scroller.js"></script>
+
+<script src="/js/main.js"></script>
+</body></html>
